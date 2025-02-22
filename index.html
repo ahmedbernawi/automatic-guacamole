@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="portfolioApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-controller="MainCtrl">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Hi, I'm Ahmed Bernawi</h1>
+            <p>Full Stack Developer</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="container">
+        <div class="bio">
+            <h2>Full Stack Developer & Technical Writer</h2>
+            <p>Expert in WordPress, PrestaShop, and modern web technologies. Proficient in:</p>
+            <div class="skill-cloud">
+                <span ng-repeat="skill in skills"></span>
+            </div>
+            <div class="tools">
+                <img src="assets/wordpress-svgrepo-com.svg" alt="WordPress" width="30" height="30">
+                <img src="assets/figma-svgrepo-com.svg" alt="Figma" width="30" height="30">
+                <img src="assets/github-svgrepo-com.svg" alt="GitHub" width="30" height="30">
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="container">
+        <h2>My Projects</h2>
+        <h4>Here are some of the projects I've worked on recently. Click on the images to view the live project.</h4>
+        <div class="projects-grid">
+            <div class="project-card">
+                <img ng-click="openProject(project)" src="./assets/Images/ninja-character.png" alt="{{project.title}}">
+                <div class="project-info">
+                    <h3>Ninja-Subscribe-Landing-Page</h3>
+                    <p>a modern and visually appealing landing page design</p>
+                    <a href=" https://ahmedbernawi.github.io/Ninja-Subscribe-Landing-Page/" target="#">
+                        <button class="view-button">View Live</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <img ng-click="openProject(project)" src="./assets/Images/hover.button.png" alt="{{project.title}}">
+                <div class="project-info">
+                    <h3>glowing-goggles</h3>
+                    <p>Unique Hover Button Design</p>
+                    <a href=" https://ahmedbernawi.github.io/glowing-goggles/" target="#">
+                        <button class="view-button">View Live</button>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card" >
+                <img ng-click="openProject(project)" src="./assets/Images/Age.calculator.app.png" alt="{{project.title}}">
+                <div class="project-info">
+                    <h3>age-calculator-app </h3>
+                    <p>Frontend Mentor - Age calculator app solution</p>
+                    <a href="https://ahmedbernawi.github.io/age-calculator-app/" target="#">
+                        <button class="view-button">View Live</button>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <img ng-click="openProject(project)" src="./assets/Images/Snapshot.png" alt="{{project.title}}">
+                <div class="project-info">
+                    <h3>Jessica-profile-card</h3>
+                    <p>Social links profile challenge on Frontend Mentor</p>
+                    <a href=" https://ahmedbernawi.github.io/Jessica-profile-card/" target="#">
+                    <button class="view-button">View Live</button>
+                </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="container">
+        <h2>Contact Me</h2>
+        <form name="contactForm" ng-submit="sendMessage()">
+            <input type="text" placeholder="Name" ng-model="name" required>
+            <input type="email" placeholder="Email" ng-model="email" required>
+            <textarea placeholder="Message" ng-model="message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2021 Ahmed Bernawi</p>
+        <div class="social-icons">
+            <a href="https://github.com/ahmedbernawi" target="_blank"><img src="assets/github-svgrepo-com.svg" alt="GitHub" width="30" height="30"></a>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+
